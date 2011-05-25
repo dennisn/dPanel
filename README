@@ -1,0 +1,8 @@
+A kind of universal project, where new technologies are tried out. Eventually, I hope to collect enough snipplets here that it would
+also serve as my snipplet dictionary
+
+TODO:
+* SQLite usage for todo task manager
+* Google Calendar integration
+* Splash screen
+* WPF usage with NotifyIcon
