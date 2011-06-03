@@ -86,11 +86,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\TrayIcons.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PanelPlugins\PanelPlugins.csproj">
+      <Project>{F7B380A6-5AC3-4925-A894-A2E36B40C228}</Project>
+      <Name>PanelPlugins</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,6 +8,8 @@ using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
+using dPanel.PanelPlugins;
+
 namespace dPanel.dTray
 {
     internal class NotificationTrayContext : ApplicationContext
@@ -137,6 +139,8 @@ namespace dPanel.dTray
                 menuStrip.Items.Add(new ToolStripSeparator());
                 menuStrip.Items.Add("&Exit", null, exitSystem_Click);
             }
+
+            PluginsManager.LoadPluginConfigs();
         }
 
         #endregion;

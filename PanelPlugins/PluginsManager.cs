@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.Configuration;
+
 namespace dPanel.PanelPlugins
 {
     /// <summary>
@@ -16,6 +18,24 @@ namespace dPanel.PanelPlugins
     /// </summary>
     public class PluginsManager
     {
+        /// <summary>
+        /// Load plugin configuration
+        /// </summary>
+        public static void LoadPluginConfigs()
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            PluginConfigSection section = config.GetSection("testPlugins") as PluginConfigSection;
 
+            if (section == null)
+                Console.WriteLine("Failed to load PluginConfigSection.");
+            else
+            {
+                Console.WriteLine("Success loading PluginConfigSection: ");
+                foreach (PluginConfigElement plugin in section.Plugins)
+                {
+                    Console.WriteLine("\t* Assembly name = '{0}', class name = '{1}'", plugin.AssemblyPath, plugin.PluginClass);
+                }
+            }
+        }
     }
 }
