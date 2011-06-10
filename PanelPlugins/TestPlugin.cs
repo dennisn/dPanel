@@ -8,7 +8,6 @@ namespace dPanel.PanelPlugins
 #if DEBUG
     public class TestPlugin: IPanelPlugin
     {
-
         public string Name
         {
             get { return "Test Plugin"; }
@@ -28,7 +27,7 @@ namespace dPanel.PanelPlugins
         {
             get { return null; }
         }
-
+        
         public Dictionary<string, EventHandler> GetMenuItems()
         {
             Dictionary<string, EventHandler> result = new Dictionary<string, EventHandler>();
