@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dTray", "dTray\dTray.csproj", "{A814CE09-B2B7-4875-9C33-F68943B81711}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MainTray", "MainTray", "{BCB66882-8F80-4A57-9DCF-2A9C77E02EA1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelPlugins", "PanelPlugins\PanelPlugins.csproj", "{F7B380A6-5AC3-4925-A894-A2E36B40C228}"
 EndProject
 Global
@@ -40,9 +38,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{A814CE09-B2B7-4875-9C33-F68943B81711} = {BCB66882-8F80-4A57-9DCF-2A9C77E02EA1}
-		{F7B380A6-5AC3-4925-A894-A2E36B40C228} = {BCB66882-8F80-4A57-9DCF-2A9C77E02EA1}
 	EndGlobalSection
 EndGlobal
