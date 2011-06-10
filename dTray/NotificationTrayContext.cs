@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.Configuration;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -66,7 +68,6 @@ namespace dPanel.dTray
 
             _trayIcon.DoubleClick += new EventHandler(trayIcon_Click);
             _trayIcon.ContextMenuStrip.Opening += new CancelEventHandler(ContextMenuStrip_Opening);
-
         }
 
         #endregion;
@@ -135,11 +136,42 @@ namespace dPanel.dTray
             {
                 menuStrip.Items.Add("&About", null, showAboutBox_Click);
                 menuStrip.Items.Add(new ToolStripSeparator());
+
+                List<ToolStripItem> items = GetPluginItems();
+                menuStrip.Items.AddRange(items.ToArray());
+
+                menuStrip.Items.Add(new ToolStripSeparator());
                 menuStrip.Items.Add("&Exit", null, exitSystem_Click);
             }
         }
 
+        private List<ToolStripItem> GetPluginItems()
+        {
+            List<ToolStripItem> result = new List<ToolStripItem>();
+
+            // Each separated plugin will add additional ToolStripItems, 
+            // which could have their own sub-items, or simple show their own form
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming);
+            
+            // TODO: need a customised configuration section group, with each item represented a separated configs
+            // See : ConfigurationElementCollection (http://msdn.microsoft.com/en-us/library/system.configuration.configurationelementcollection%28v=VS.90%29.aspx)
+
+            //// test
+            //ToolStripMenuItem test = new ToolStripMenuItem("&test dropdown");
+            //test.DropDown = new ToolStripDropDown();
+            //test.DropDown.Items.Add("Test 1");
+            //test.DropDown.Items.Add("Test 2");
+            //test.DropDown.Items.Add("Test 3");
+            //result.Add(test);
+
+            return result;
+        }
+
+
+
         #endregion;
+
+       
     }
 
     /// <summary>
