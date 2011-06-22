@@ -33,13 +33,10 @@ namespace dPanel.dTray
 
         public NotificationTrayContext()
         {
-            Thread splashThread = new Thread(ShowSplash);
-            splashThread.Start();
-
+            SplashController.StartSplash();
             Initialize();
-            
-            // TODO: a better job of making a splash screen
-            splashThread.Abort();
+            Thread.Sleep(1000);
+            SplashController.EndSplash();
         }
 
         private void ShowSplash()
