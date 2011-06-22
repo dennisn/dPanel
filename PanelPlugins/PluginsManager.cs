@@ -36,6 +36,7 @@ namespace dPanel.PanelPlugins
             else
             {
                 Console.WriteLine("Success loading PluginConfigSection: ");
+                Console.Write("test");
                 foreach (PluginConfigElement plugin in section.Plugins)
                 {
                     Console.WriteLine("\t* Assembly name = '{0}', class name = '{1}'", plugin.AssemblyPath, plugin.PluginClass);
